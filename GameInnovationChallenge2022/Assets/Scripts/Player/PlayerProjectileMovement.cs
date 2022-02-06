@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PlayerProjectileMovement : MonoBehaviour, IEnemyDamage
+public class PlayerProjectileMovement : MonoBehaviour
 {
 
   //  public Rigidbody2D rb;
@@ -20,14 +20,15 @@ public class PlayerProjectileMovement : MonoBehaviour, IEnemyDamage
         player = GameObject.Find("Player");
         sentry = GameObject.Find("Sentry");
 
-   //     damageableGameObjects.Add("Sentry");
-        /*
+    //    damageableGameObjects.Add(sentry);
+        
+        
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<IEnemyDamage>();
-        foreach (IEnemyDamage s in ss)
+        foreach (MonoBehaviour s in ss)
         {
-            damageableGameObjects.Add(s);
+             damageableGameObjects.Add(sentry);
         }
-        */
+        
     }
 
     // Update is called once per frame
@@ -44,8 +45,21 @@ public class PlayerProjectileMovement : MonoBehaviour, IEnemyDamage
         */
 
     }
-
+    /*
     public void ProjectileDamage()
+    {
+        foreach (var damageableGameObject in damageableGameObjects)
+        {
+            
+            var damageable = damageableGameObject.GetComponent<IEnemyDamage>();
+            Debug.Log("Projectile Damage");
+            damageable.ProjectileDamage();
+        }
+    }
+
+    */
+    
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         foreach (var damageableGameObject in damageableGameObjects)
         {
