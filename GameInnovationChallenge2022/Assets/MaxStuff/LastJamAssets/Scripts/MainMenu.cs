@@ -10,9 +10,9 @@ public class MainMenu : MonoBehaviour
        //load Game Scene
     }
 
-    public void Controls()
+    public void Options()
     {
-        SceneManager.LoadScene("Info" , LoadSceneMode.Single);
+        SceneManager.LoadScene("Options" , LoadSceneMode.Single);
     }
 
     public void Credits()
