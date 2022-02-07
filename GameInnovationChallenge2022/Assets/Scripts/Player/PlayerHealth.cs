@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     public Image playerHealthFG;
     [SerializeField] public PlayerActionControls playerActionControls;
     public bool healthLoss;
+  //  private bool playerDeath;
 
 
     private void Awake()
@@ -47,6 +48,11 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
             Debug.Log("Health Lost");
             HealthLoss();
         }
+
+        if (playerHealth == 0)
+        {
+            PlayerDeath();
+        }
     }
 
     void HealthLoss()
@@ -57,5 +63,10 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     public void MissileDamage()
     {
         playerHealth -= 30;
+    }
+
+    public void PlayerDeath()
+    {
+        Debug.Log("Player has died");
     }
 }
