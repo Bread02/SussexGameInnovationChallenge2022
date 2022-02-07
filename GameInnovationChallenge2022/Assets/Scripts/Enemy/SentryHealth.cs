@@ -33,4 +33,12 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         sentryHealth -= 10;
         Debug.Log("Projectile health loss");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "PlayerProjectile")
+        {
+            ProjectileDamage();
+        }
+    }
 }

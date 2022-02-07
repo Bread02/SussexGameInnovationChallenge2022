@@ -24,46 +24,22 @@ public class PlayerProjectileMovement : MonoBehaviour
         {
              damageableGameObjects.Add(foo);
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
         projectile.transform.position += transform.right * projectileSpeed * Time.deltaTime;
-
-
-        /*
-        if (Vector2.Distance(projectile.transform.position, damageableGameObject.transform.position) < 1)
-        {
-            ProjectileDamage();
-        }
-        */
-
-    }
-    /*
-    public void ProjectileDamage()
-    {
-        foreach (var damageableGameObject in damageableGameObjects)
-        {
-            
-            var damageable = damageableGameObject.GetComponent<IEnemyDamage>();
-            Debug.Log("Projectile Damage");
-            damageable.ProjectileDamage();
-        }
     }
 
-    */
     
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (var damageableGameObject in damageableGameObjects)
+        if (collision.tag != "Player")
         {
-            var damageable = damageableGameObject.GetComponent<IEnemyDamage>();
-            Debug.Log("Projectile Damage");
-            damageable.ProjectileDamage();
+            projectile.transform.position = new Vector2(1000, 0);
+            Debug.Log("TELEPORTING PROJECTILE");
         }
-
     }
 
 }
