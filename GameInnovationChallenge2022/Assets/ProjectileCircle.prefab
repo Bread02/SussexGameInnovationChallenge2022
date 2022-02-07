@@ -101,8 +101,7 @@ MonoBehaviour:
   cursor: {fileID: 1406114548032330, guid: c56ad059900471a41914b645b91e74aa, type: 3}
   player: {fileID: 0}
   sentry: {fileID: 0}
-  damageableGameObjects:
-  - {fileID: 0}
+  damageableGameObjects: []
 --- !u!61 &-5794401639152643663
 BoxCollider2D:
   m_ObjectHideFlags: 0

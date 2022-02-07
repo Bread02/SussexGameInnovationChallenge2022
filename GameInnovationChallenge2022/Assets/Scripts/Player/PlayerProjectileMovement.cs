@@ -19,16 +19,12 @@ public class PlayerProjectileMovement : MonoBehaviour
         projectile = this.gameObject;
         player = GameObject.Find("Player");
         sentry = GameObject.Find("Sentry");
-
-    //    damageableGameObjects.Add(sentry);
         
-        
-        var ss = FindObjectsOfType<MonoBehaviour>().OfType<IEnemyDamage>();
-        foreach (MonoBehaviour s in ss)
+        foreach (GameObject foo in GameObject.FindGameObjectsWithTag("EnemyOne"))
         {
-             damageableGameObjects.Add(sentry);
+             damageableGameObjects.Add(foo);
         }
-        
+
     }
 
     // Update is called once per frame
@@ -67,6 +63,7 @@ public class PlayerProjectileMovement : MonoBehaviour
             Debug.Log("Projectile Damage");
             damageable.ProjectileDamage();
         }
+
     }
 
 }

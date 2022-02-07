@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 571940646}
   m_Layer: 0
   m_Name: Sentry
-  m_TagString: Untagged
+  m_TagString: EnemyOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1878,7 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1224463526}
   - component: {fileID: 1224463525}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2937,8 +2937,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3676479629630021715, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3676479630843105833, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676479630843105833, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676479630843105833, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3676479630843105834, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
@@ -2997,6 +3009,10 @@ PrefabInstance:
       propertyPath: playerHealthFG
       value: 
       objectReference: {fileID: 333223766}
+    - target: {fileID: 3676479630903687571, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
 --- !u!1 &3676479629615361990 stripped
