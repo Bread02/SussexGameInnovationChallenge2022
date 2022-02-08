@@ -3396,3 +3396,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3676479630843105833, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
   m_PrefabInstance: {fileID: 3676479629615361989}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3676479629615361991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676479629615361990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf6689dc93cd0941974241c128580c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
