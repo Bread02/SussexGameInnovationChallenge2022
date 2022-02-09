@@ -107,6 +107,15 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EnemyDefensiveWeapon"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""e944a2e2-fbd3-46e9-b6c0-17f0ad587e2c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -263,6 +272,17 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78ebaf7d-e8a5-4b21-baca-76e63184a7ca"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnemyDefensiveWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -308,6 +328,7 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
         m_PlayerControls_Inventory = m_PlayerControls.FindAction("Inventory", throwIfNotFound: true);
         m_PlayerControls_Map = m_PlayerControls.FindAction("Map", throwIfNotFound: true);
         m_PlayerControls_Jump = m_PlayerControls.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerControls_EnemyDefensiveWeapon = m_PlayerControls.FindAction("EnemyDefensiveWeapon", throwIfNotFound: true);
         // DebugControls
         m_DebugControls = asset.FindActionMap("DebugControls", throwIfNotFound: true);
         m_DebugControls_HealthLoss = m_DebugControls.FindAction("HealthLoss", throwIfNotFound: true);
@@ -379,6 +400,7 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
     private readonly InputAction m_PlayerControls_Inventory;
     private readonly InputAction m_PlayerControls_Map;
     private readonly InputAction m_PlayerControls_Jump;
+    private readonly InputAction m_PlayerControls_EnemyDefensiveWeapon;
     public struct PlayerControlsActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -392,6 +414,7 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
         public InputAction @Inventory => m_Wrapper.m_PlayerControls_Inventory;
         public InputAction @Map => m_Wrapper.m_PlayerControls_Map;
         public InputAction @Jump => m_Wrapper.m_PlayerControls_Jump;
+        public InputAction @EnemyDefensiveWeapon => m_Wrapper.m_PlayerControls_EnemyDefensiveWeapon;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -428,6 +451,9 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
                 @Jump.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJump;
+                @EnemyDefensiveWeapon.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnEnemyDefensiveWeapon;
+                @EnemyDefensiveWeapon.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnEnemyDefensiveWeapon;
+                @EnemyDefensiveWeapon.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnEnemyDefensiveWeapon;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -459,6 +485,9 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @EnemyDefensiveWeapon.started += instance.OnEnemyDefensiveWeapon;
+                @EnemyDefensiveWeapon.performed += instance.OnEnemyDefensiveWeapon;
+                @EnemyDefensiveWeapon.canceled += instance.OnEnemyDefensiveWeapon;
             }
         }
     }
@@ -507,6 +536,7 @@ public partial class @PlayerActionControls : IInputActionCollection2, IDisposabl
         void OnInventory(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnEnemyDefensiveWeapon(InputAction.CallbackContext context);
     }
     public interface IDebugControlsActions
     {

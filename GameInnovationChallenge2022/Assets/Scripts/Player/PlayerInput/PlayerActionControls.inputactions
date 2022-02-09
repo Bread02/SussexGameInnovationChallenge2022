@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EnemyDefensiveWeapon",
+                    "type": "PassThrough",
+                    "id": "e944a2e2-fbd3-46e9-b6c0-17f0ad587e2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -239,6 +248,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78ebaf7d-e8a5-4b21-baca-76e63184a7ca",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EnemyDefensiveWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

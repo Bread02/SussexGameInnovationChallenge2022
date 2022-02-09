@@ -34,11 +34,35 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         Debug.Log("Projectile health loss");
     }
 
+    public void ConeDamage()
+    {
+        sentryHealth -= 5;
+        Debug.Log("Cone health loss");
+    }
+
+    public void BeamDamage()
+    {
+        sentryHealth -= 5;
+        Debug.Log("beam health loss");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "PlayerProjectile")
         {
             ProjectileDamage();
+        }
+
+        if(collision.tag == "PlayerConeAttack")
+        {
+            ConeDamage();
+            Debug.Log("COllided with Cone");
+        }
+
+        if (collision.tag == "PlayerBeamAttack")
+        {
+            BeamDamage();
+            Debug.Log("COllided with beam");
         }
     }
 }

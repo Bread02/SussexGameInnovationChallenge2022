@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EnemyOne
   - PlayerProjectile
+  - PlayerConeAttack
+  - PlayerBeamAttack
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,7 @@ public class SentryAI : MonoBehaviour
         if (Vector2.Distance(player.transform.position, sentry.transform.position) < sentryRange && cooldown == false)
         {
             Fire();
-            Debug.Log("Sentry fire");
+      //      Debug.Log("Sentry fire");
         }
     }
 
@@ -52,7 +52,7 @@ public class SentryAI : MonoBehaviour
             projectileNumber = 0;
         }
         cooldown = true;
-        Debug.Log("Cooldown True");
+     //   Debug.Log("Cooldown True");
         StartCoroutine(MissileCooldown());
     }
 
@@ -60,6 +60,6 @@ public class SentryAI : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         cooldown = false;
-        Debug.Log("Cooldown false");
+    //    Debug.Log("Cooldown false");
     }
 }
