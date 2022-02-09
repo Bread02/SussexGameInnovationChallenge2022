@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SentryHealth : MonoBehaviour, IEnemyDamage
 {
     public float sentryHealth;
     public GameObject sentry;
+    public Image healthFG;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         {
             Death();
         }
+        healthFG.fillAmount = sentryHealth / 100;
     }
 
     public void Death()

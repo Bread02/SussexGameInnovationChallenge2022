@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStealthBlink : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class PlayerStealthBlink : MonoBehaviour
     [SerializeField] private bool blinkPressed;
     public PlayerMovement playerMovement;
 
+    public float originalBlinkCooldown;
+
+    public Image stealthBlinkCoolDownImage;
+
 
     private void Awake()
     {
@@ -21,6 +26,9 @@ public class PlayerStealthBlink : MonoBehaviour
         blinkEnd = false;
         playerActionControls.PlayerControls.EnemyDefensiveWeapon.performed += ctx => blinkPressed = true;
         playerActionControls.PlayerControls.EnemyDefensiveWeapon.canceled += ctx => blinkPressed = false;
+
+        stealthBlinkCoolDownImage.fillAmount = 1;
+        originalBlinkCooldown = blinkCooldown;
     }
 
     private void OnEnable()
@@ -35,13 +43,28 @@ public class PlayerStealthBlink : MonoBehaviour
 
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if(blinkPressed == true && blinkCannotBeActivated == false)
         {
             StartCoroutine(Blink());
 
         }
+        if (blinkEnd == true)
+        {
+            blinkCooldown += Time.deltaTime;
+            stealthBlinkCoolDownImage.fillAmount += blinkCooldown * 0.1f;
+        }
+        if (blinkCooldown > 3)
+        {
+            stealthBlinkCoolDownImage.fillAmount = 1;
+        }
+    }
+
+    public void BlinkCoolDownImageFill()
+    {
+        Debug.Log("Cooldown Void");
+        stealthBlinkCoolDownImage.fillAmount = 0;
     }
 
     public IEnumerator Blink()
@@ -49,11 +72,15 @@ public class PlayerStealthBlink : MonoBehaviour
         Debug.Log("BLINKING");
         blinkCannotBeActivated = true;
         playerMovement.speed = playerMovement.speed * 2;
-        yield return new WaitForSeconds(blinkCooldown);
+        yield return new WaitForSeconds(originalBlinkCooldown);
+        blinkCooldown = 0;
         Debug.Log("Blink ended, cooldown activated");
+        BlinkCoolDownImageFill();
         blinkEnd = true;
         playerMovement.speed = playerMovement.speed / 2;
-        yield return new WaitForSeconds(blinkCooldown);
+        yield return new WaitForSeconds(originalBlinkCooldown);
+        blinkCooldown = originalBlinkCooldown;
+        blinkEnd = false;
         Debug.Log("Blink can now be used again");
         blinkCannotBeActivated = false;
     }
