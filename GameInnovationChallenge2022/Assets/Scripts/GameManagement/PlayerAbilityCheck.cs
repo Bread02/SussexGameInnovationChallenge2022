@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerAbilityCheck : MonoBehaviour
 {
 
-   // [SerializeField] private GameDataManager gameDataManager;
-    [SerializeField] private SkillTreeMaster skillTreeMaster;
+    [SerializeField] private GameDataManager gameDataManager;
+
 
     //weapon scripts
     [SerializeField] private PlayerBeamAttack playerBeamAttack;
@@ -19,18 +19,31 @@ public class PlayerAbilityCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(skillTreeMaster.BoolPetRockSelected())
+        playerProjectileGun.enabled = false;
+        playerGooseAttack.enabled = false;
+        playerBeeSwarmAttack.enabled = false;
+        playerBeamAttack.enabled = false;
+        SelectedWeapon();
+    }
+
+    void SelectedWeapon()
+    {
+        if(gameDataManager.SelectedWeapon() == 0)
         {
             playerProjectileGun.enabled = true;
         }
-
-        if(skillTreeMaster.BoolQuackAttackSelected())
+        if (gameDataManager.SelectedWeapon() == 1)
+        {
+            playerBeamAttack.enabled = true;
+        }
+        if (gameDataManager.SelectedWeapon() == 2)
         {
             playerGooseAttack.enabled = true;
         }
-
-
-
+        if(gameDataManager.SelectedWeapon() == 3)
+        {
+            playerBeeSwarmAttack.enabled = true;
+        }
     }
 
     // Update is called once per frame
