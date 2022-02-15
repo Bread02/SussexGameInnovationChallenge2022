@@ -17,6 +17,7 @@ public class PlayerStealthBlink : MonoBehaviour
     public float originalBlinkCooldown;
 
     public Image stealthBlinkCoolDownImage;
+    public Image stealthBlinkCoolDownImageRED;
 
 
     private void Awake()
@@ -29,6 +30,8 @@ public class PlayerStealthBlink : MonoBehaviour
 
         stealthBlinkCoolDownImage.fillAmount = 1;
         originalBlinkCooldown = blinkCooldown;
+        stealthBlinkCoolDownImage.enabled = true;
+        stealthBlinkCoolDownImageRED.enabled = false;
     }
 
     private void OnEnable()
@@ -70,9 +73,13 @@ public class PlayerStealthBlink : MonoBehaviour
     public IEnumerator Blink()
     {
         Debug.Log("BLINKING");
+        stealthBlinkCoolDownImage.enabled = false;
+        stealthBlinkCoolDownImageRED.enabled = true;
         blinkCannotBeActivated = true;
         playerMovement.speed = playerMovement.speed * 2;
         yield return new WaitForSeconds(originalBlinkCooldown);
+        stealthBlinkCoolDownImageRED.enabled = false;
+        stealthBlinkCoolDownImage.enabled = true;
         blinkCooldown = 0;
         Debug.Log("Blink ended, cooldown activated");
         BlinkCoolDownImageFill();

@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 // keeps track of player inventory, points, skills, etc.
-public class GameDataManager : MonoBehaviour
+public class GameDataManager: MonoBehaviour
 {
     public int skillPoints;
     private int timesDied;
@@ -13,9 +13,8 @@ public class GameDataManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+      //  DontDestroyOnLoad(this.gameObject);
     }
-
 
     // check whether player has these pet rock abilities unlocked
     public bool petRock;
@@ -62,6 +61,7 @@ public class GameDataManager : MonoBehaviour
         return;
     }
 
+
     private void ReadFromSave()
     {
         //Load achievments
@@ -79,7 +79,7 @@ public class GameDataManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"gameData File not found");
-          //  gameDataManager = new GameDataManager();
+        //    gameDataManager = new GameDataManager(0, 0, false, false, false, false);
         }
     }
 
@@ -117,6 +117,9 @@ public class GameDataManager : MonoBehaviour
     void Start()
     {
         SelectedWeapon();
+     //   ReadFromSave();
+        WriteToSave();
+
     }
 
     // Update is called once per frame
