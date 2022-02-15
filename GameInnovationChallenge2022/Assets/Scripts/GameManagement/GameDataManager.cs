@@ -7,6 +7,7 @@ public class GameDataManager : MonoBehaviour
 {
     public int skillPoints;
 
+
     // check whether player has these pet rock abilities unlocked
     public bool petRock;
     public bool shatterShot;
@@ -33,6 +34,10 @@ public class GameDataManager : MonoBehaviour
     public bool poisonSting;
     public bool queenBee;
 
+    // check which weapon is selected
+    public bool PetRockSelected;
+    public bool QuackAttackSelected;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +48,13 @@ public class GameDataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    // getter and setters
+    
+
+
 
 
 
