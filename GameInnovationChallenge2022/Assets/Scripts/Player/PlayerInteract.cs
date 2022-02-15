@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour, IInteractable
     [SerializeField] private PlayerActionControls playerActionControls;
 
     [SerializeField] private List<GameObject> interactableGameObjects;
-    public GameObject player;
+    private GameObject player;
     public GameObject interactQuestionMark;
 
     [SerializeField] private float interactDistance;
@@ -19,6 +19,7 @@ public class PlayerInteract : MonoBehaviour, IInteractable
     private bool interact;
     private void Awake()
     {
+        player = this.gameObject;
         playerActionControls = new PlayerActionControls();
 
         playerActionControls.PlayerControls.Interact.started += ctx => interact = true;

@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class PlayerStealthBlink : MonoBehaviour
 {
     [SerializeField] private float blinkDuration;
- //   [SerializeField] private float blinkSpeedBoost;
     [SerializeField] private float blinkCooldown;
     [SerializeField] private bool blinkCannotBeActivated;
     [SerializeField] private bool blinkEnd;
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] public PlayerActionControls playerActionControls;
     [SerializeField] private bool blinkPressed;
     public PlayerMovement playerMovement;
@@ -22,6 +21,7 @@ public class PlayerStealthBlink : MonoBehaviour
 
     private void Awake()
     {
+        player = this.gameObject;
         playerActionControls = new PlayerActionControls();
         blinkEnd = false;
         playerActionControls.PlayerControls.EnemyDefensiveWeapon.performed += ctx => blinkPressed = true;

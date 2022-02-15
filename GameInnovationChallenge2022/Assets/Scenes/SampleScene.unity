@@ -2009,54 +2009,6 @@ MonoBehaviour:
     m_Bits: 0
   IgnoreTag: 
   CameraRadius: 0.2
---- !u!1 &848199244
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848199246}
-  - component: {fileID: 848199245}
-  m_Layer: 0
-  m_Name: PlayerAbilityCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &848199245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848199244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871c03f746e83ff40adfcb94572c355e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameDataManager: {fileID: 0}
-  playerBeamAttack: {fileID: 0}
-  playerBeeSwarmAttack: {fileID: 0}
-  playerGooseAttack: {fileID: 0}
-  playerProjectileGun: {fileID: 0}
---- !u!4 &848199246
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848199244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.116861, y: 4.4521637, z: -2.7621827}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865987781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,7 +2336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1157370064
 MonoBehaviour:
@@ -4232,7 +4184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beam: {fileID: 1237551969}
   beamPivot: {fileID: 1872262200}
-  player: {fileID: 3676479629615361990}
   fire: 0
   fireCooldown: 0
 --- !u!114 &3676479629615361993
@@ -4251,11 +4202,51 @@ MonoBehaviour:
   blinkCooldown: 3
   blinkCannotBeActivated: 0
   blinkEnd: 0
-  player: {fileID: 3676479629615361990}
   blinkPressed: 0
   playerMovement: {fileID: 3676479629615361997}
   originalBlinkCooldown: 0
   stealthBlinkCoolDownImage: {fileID: 77834251}
+--- !u!114 &3676479629615361994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676479629615361990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871c03f746e83ff40adfcb94572c355e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDataManager: {fileID: 1157370064}
+  playerBeamAttack: {fileID: 3676479629615361992}
+  playerBeeSwarmAttack: {fileID: 3676479629615361996}
+  playerGooseAttack: {fileID: 3676479629615361991}
+  playerProjectileGun: {fileID: 3676479629615361995}
+--- !u!114 &3676479629615361995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3676479630843105841, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}
+  m_PrefabInstance: {fileID: 3676479629615361989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676479629615361990}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edfa7a27426b464fbdc5c5c38d86140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3676479629615361996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676479629615361990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84889a1e1f74d344bd0d3f6f73d2666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beeSwarm: {fileID: 1922839338}
 --- !u!114 &3676479629615361997 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3676479630843105844, guid: f068a3bc0d4a71047b91ff3518af0cba, type: 3}

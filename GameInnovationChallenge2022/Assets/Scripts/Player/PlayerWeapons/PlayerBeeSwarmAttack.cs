@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerBeeSwarmAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] private GameObject beeSwarm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = this.gameObject;
     }
 
     // Update is called once per frame
