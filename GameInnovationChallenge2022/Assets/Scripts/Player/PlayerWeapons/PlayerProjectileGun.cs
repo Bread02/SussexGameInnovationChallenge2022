@@ -96,4 +96,5 @@ public class PlayerProjectileGun : MonoBehaviour
         yield return new WaitForSeconds(projectileCooldownSeconds);
         fireCooldown = false;
     }
+
 }

@@ -1389,6 +1389,7 @@ MonoBehaviour:
   sentryHealth: 100
   sentry: {fileID: 571940641}
   healthFG: {fileID: 65158497}
+  gameDataManager: {fileID: 1157370064}
 --- !u!61 &571940646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2355,8 +2356,8 @@ MonoBehaviour:
   shatterShot: 0
   volcanic: 0
   lava: 0
-  platypusBeam: 0
-  fire: 0
+  platypusBeam: 1
+  fire: 1
   freeze: 0
   explode: 0
   deepFreeze: 0
@@ -2369,6 +2370,10 @@ MonoBehaviour:
   honey: 0
   poisonSting: 0
   queenBee: 0
+  petRockSelected: 0
+  platypusBeamSelected: 1
+  quackAttackSelected: 0
+  beesSelected: 0
 --- !u!1 &1205409048
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,10 +44,10 @@ public class GameDataManager : MonoBehaviour
     public bool queenBee;
 
     // check which weapon is selected
-    private bool petRockSelected;
-    private bool platypusBeamSelected;
-    private bool quackAttackSelected;
-    private bool beesSelected;
+    public bool petRockSelected;
+    public bool platypusBeamSelected;
+    public bool quackAttackSelected;
+    public bool beesSelected;
 
 
     public GameDataManager(int skillPoints, int timesDied, bool petRock,
@@ -116,7 +116,7 @@ public class GameDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SelectedWeapon();
     }
 
     // Update is called once per frame
