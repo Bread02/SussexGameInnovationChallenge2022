@@ -31,19 +31,43 @@ public class PlayerAbilityCheck : MonoBehaviour
         if(gameDataManager.SelectedWeapon() == 0)
         {
             playerProjectileGun.enabled = true;
+            SelectedProjectileGunUpgrades();
         }
         if (gameDataManager.SelectedWeapon() == 1)
         {
             playerBeamAttack.enabled = true;
+            SelectedBeamAttackUpgrades();
         }
         if (gameDataManager.SelectedWeapon() == 2)
         {
             playerGooseAttack.enabled = true;
+            SelectedGooseAttackUpgrades();
         }
         if(gameDataManager.SelectedWeapon() == 3)
         {
             playerBeeSwarmAttack.enabled = true;
+            SelectedBeeSwarmUpgrades();
         }
+    }
+
+    void SelectedProjectileGunUpgrades()
+    {
+
+    }
+
+    void SelectedBeamAttackUpgrades()
+    {
+
+    }
+
+    void SelectedGooseAttackUpgrades()
+    {
+
+    }
+
+    void SelectedBeeSwarmUpgrades()
+    {
+
     }
 
     // Update is called once per frame
