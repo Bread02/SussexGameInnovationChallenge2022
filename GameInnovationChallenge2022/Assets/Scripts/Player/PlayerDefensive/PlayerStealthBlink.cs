@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class PlayerStealthBlink : MonoBehaviour
 {
     [SerializeField] private float blinkDuration;
- //   [SerializeField] private float blinkSpeedBoost;
     [SerializeField] private float blinkCooldown;
     [SerializeField] private bool blinkCannotBeActivated;
     [SerializeField] private bool blinkEnd;
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] public PlayerActionControls playerActionControls;
     [SerializeField] private bool blinkPressed;
     public PlayerMovement playerMovement;
@@ -18,10 +17,12 @@ public class PlayerStealthBlink : MonoBehaviour
     public float originalBlinkCooldown;
 
     public Image stealthBlinkCoolDownImage;
+    public Image stealthBlinkCoolDownImageRED;
 
 
     private void Awake()
     {
+        player = this.gameObject;
         playerActionControls = new PlayerActionControls();
         blinkEnd = false;
         playerActionControls.PlayerControls.EnemyDefensiveWeapon.performed += ctx => blinkPressed = true;
@@ -29,6 +30,8 @@ public class PlayerStealthBlink : MonoBehaviour
 
         stealthBlinkCoolDownImage.fillAmount = 1;
         originalBlinkCooldown = blinkCooldown;
+        stealthBlinkCoolDownImage.enabled = true;
+        stealthBlinkCoolDownImageRED.enabled = false;
     }
 
     private void OnEnable()
@@ -70,9 +73,13 @@ public class PlayerStealthBlink : MonoBehaviour
     public IEnumerator Blink()
     {
         Debug.Log("BLINKING");
+        stealthBlinkCoolDownImage.enabled = false;
+        stealthBlinkCoolDownImageRED.enabled = true;
         blinkCannotBeActivated = true;
         playerMovement.speed = playerMovement.speed * 2;
         yield return new WaitForSeconds(originalBlinkCooldown);
+        stealthBlinkCoolDownImageRED.enabled = false;
+        stealthBlinkCoolDownImage.enabled = true;
         blinkCooldown = 0;
         Debug.Log("Blink ended, cooldown activated");
         BlinkCoolDownImageFill();
