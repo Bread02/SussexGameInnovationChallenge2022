@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         playerActionControls = new PlayerActionControls();
         playerActionControls.Enable();
         rb = GetComponent<Rigidbody2D>();
-
     }
     
     void FlipPlayer()

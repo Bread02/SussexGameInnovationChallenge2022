@@ -9,6 +9,8 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
     public GameObject sentry;
     public Image healthFG;
 
+    public GameDataManager gameDataManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,23 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         Debug.Log("beam health loss");
     }
 
+    public void FireDamage()
+    {
+        StartCoroutine(FireDOT());
+    }
+
+    IEnumerator FireDOT()
+    {
+        Debug.Log("SENTRY FIRE DAMAGE");
+        sentryHealth -= 5;
+        yield return new WaitForSeconds(0.5f);
+        sentryHealth -= 5;
+        yield return new WaitForSeconds(0.5f);
+        sentryHealth -= 5;
+        yield return new WaitForSeconds(0.5f);
+        sentryHealth -= 5;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "PlayerProjectile")
@@ -66,6 +85,10 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         {
             BeamDamage();
             Debug.Log("COllided with beam");
+            if(gameDataManager.fire == true)
+            {
+                FireDamage();
+            }
         }
     }
 }

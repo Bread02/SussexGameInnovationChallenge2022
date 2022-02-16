@@ -6,7 +6,7 @@ public class PlayerBeamAttack : MonoBehaviour
 {
     [SerializeField] private GameObject beam;
     [SerializeField] private GameObject beamPivot;
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] public PlayerActionControls playerActionControls;
 
     [SerializeField] private bool fire;
@@ -14,6 +14,7 @@ public class PlayerBeamAttack : MonoBehaviour
 
     private void Awake()
     {
+        player = this.gameObject;
         playerActionControls = new PlayerActionControls();
 
         playerActionControls.PlayerControls.PlayerFireWeapon.performed += ctx => fire = true;
