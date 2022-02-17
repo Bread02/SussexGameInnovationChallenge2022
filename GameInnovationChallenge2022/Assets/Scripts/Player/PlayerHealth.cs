@@ -9,8 +9,6 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     public Image playerHealthFG;
     [SerializeField] public PlayerActionControls playerActionControls;
     public bool healthLoss;
-  //  private bool playerDeath;
-
 
     private void Awake()
     {

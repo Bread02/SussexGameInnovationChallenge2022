@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 // this class controls the skill tree.
 // It will check whether a player has point(s) they can spend.
@@ -10,28 +11,76 @@ using UnityEngine.UI;
 public class SkillTreeMaster : MonoBehaviour
 {
     public int skillPoints;
-    public GameDataManager gameDataManager;
+    [SerializeField] private GameDataManager gameDataManager;
 
-    public GameObject petRockButtonBuy;
-    public GameObject petRockButtonUnlocked;
+    #region Buttons
+    // pet rock and abilities
+    [SerializeField] private GameObject petRockButtonBuy;
+    [SerializeField] private GameObject petRockButtonUnlocked;
 
-    public GameObject ShatterShotButtonBuy;
-    public GameObject ShatterShotButtonUnlocked;
+    [SerializeField] private GameObject petRockShatterShotButtonBuy;
+    [SerializeField] private GameObject petRockShatterShotButtonUnlocked;
 
-    public GameObject VolcanicButtonBuy;
-    public GameObject VolcanicButtonUnlocked;
+    [SerializeField] private GameObject petRockVolcanicButtonBuy;
+    [SerializeField] private GameObject petRockVolcanicButtonUnlocked;
 
-    public GameObject LavaButtonBuy;
-    public GameObject LavaButtonUnlocked;
+    [SerializeField] private GameObject petRockLavaButtonBuy;
+    [SerializeField] private GameObject petRockLavaButtonUnlocked;
 
-    public GameObject quackAttackBuy;
-    public GameObject quackAttackUnlocked;
+    // quack attack and abilities
+    [SerializeField] private GameObject quackAttackBuy;
+    [SerializeField] private GameObject quackAttackUnlocked;
 
+    [SerializeField] private GameObject quackAttackEchoBuy;
+    [SerializeField] private GameObject quackAttackEchoUnlocked;
+
+    [SerializeField] private GameObject quackAttackRazeBuy;
+    [SerializeField] private GameObject quackAttackRazeUnlocked;
+
+    [SerializeField] private GameObject quackAttackFeatherBuy;
+    [SerializeField] private GameObject quackAttackFeatherUnlocked;
+
+    // Platypus beam and abilities
+    [SerializeField] private GameObject platypusBeamBuy;
+    [SerializeField] private GameObject platypusBeamUnlocked;
+
+    [SerializeField] private GameObject platypusBeamFireBuy;
+    [SerializeField] private GameObject platypusBeamFireUnlocked;
+
+    [SerializeField] private GameObject platypusBeamFreezeBuy;
+    [SerializeField] private GameObject platypusBeamFreezeUnlocked;
+
+    [SerializeField] private GameObject platypusBeamExplodeBuy;
+    [SerializeField] private GameObject platypusBeamExplodeUnlocked;
+
+    [SerializeField] private GameObject platypusBeamDeepFreezeBuy;
+    [SerializeField] private GameObject platypusBeamDeepFreezeUnlocked;
+
+    [SerializeField] private GameObject platypusBeamTwinBeamBuy;
+    [SerializeField] private GameObject platypusBeamTwinBeamUnlocked;
+
+    // Bee attacks and abilities
+    [SerializeField] private GameObject beeAttackBuy;
+    [SerializeField] private GameObject beeAttackUnlock;
+
+    [SerializeField] private GameObject beeAttackHoneyBuy;
+    [SerializeField] private GameObject beeAttackHoneyUnlock;
+
+    [SerializeField] private GameObject beeAttackPoisonStingBuy;
+    [SerializeField] private GameObject beeAttackPoisonStingUnlock;
+
+    [SerializeField] private GameObject beeAttackQueenBeeBuy;
+    [SerializeField] private GameObject beeAttackQueenBeeUnlock;
+    #endregion
+
+    // Selections
     public bool PetRockSelected;
+
+
     public bool QuackAttackSelected;
-    //  public bool ShatterShotSelected;
-    //   public bool VSelected;
-    //  public bool PetRockSelected;
+
+    public TMP_Text textTitle;
+    public TMP_Text textDescription;
 
     public Button button;
 
@@ -49,37 +98,37 @@ public class SkillTreeMaster : MonoBehaviour
             petRockButtonUnlocked.SetActive(true);
         }
 
-        if (gameDataManager.shatterShot == false)
+        if (gameDataManager.petRockShatterShot == false)
         {
-            ShatterShotButtonBuy.SetActive(true);
-            ShatterShotButtonUnlocked.SetActive(false);
+            petRockShatterShotButtonBuy.SetActive(true);
+            petRockShatterShotButtonUnlocked.SetActive(false);
         }
         else
         {
-            ShatterShotButtonBuy.SetActive(false);
-            ShatterShotButtonUnlocked.SetActive(true);
+            petRockShatterShotButtonBuy.SetActive(false);
+            petRockShatterShotButtonUnlocked.SetActive(true);
         }
 
-        if (gameDataManager.volcanic == false)
+        if (gameDataManager.petRockVolcanic == false)
         {
-            VolcanicButtonBuy.SetActive(true);
-            VolcanicButtonUnlocked.SetActive(false);
+            petRockVolcanicButtonBuy.SetActive(true);
+            petRockVolcanicButtonUnlocked.SetActive(false);
         }
         else
         {
-            VolcanicButtonBuy.SetActive(false);
-            VolcanicButtonUnlocked.SetActive(true);
+            petRockVolcanicButtonBuy.SetActive(false);
+            petRockVolcanicButtonUnlocked.SetActive(true);
         }
 
-        if (gameDataManager.volcanic == false)
+        if (gameDataManager.petRockVolcanic == false)
         {
-            LavaButtonBuy.SetActive(true);
-            LavaButtonUnlocked.SetActive(false);
+            petRockLavaButtonBuy.SetActive(true);
+            petRockLavaButtonUnlocked.SetActive(false);
         }
         else
         {
-            LavaButtonBuy.SetActive(false);
-            LavaButtonUnlocked.SetActive(true);
+            petRockLavaButtonBuy.SetActive(false);
+            petRockLavaButtonUnlocked.SetActive(true);
         }
 
         if (gameDataManager.quackAttack == false)
@@ -98,8 +147,10 @@ public class SkillTreeMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
+    #region Unlock Buttons
     public void UnlockPetRock()
     {
         Debug.Log("CLICK");
@@ -125,19 +176,123 @@ public class SkillTreeMaster : MonoBehaviour
         }
     }
 
+    // Platypus Beam Unlocks
+    public void UnlockPlatypusBeam()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.quackAttack = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+            Debug.Log("Quack Attack Unlocked");
+        }
+    }
+
+    public void UnlockPlatypusBeamFire()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFire = true;
+            platypusBeamFireBuy.SetActive(false);
+            platypusBeamFireUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Fire Unlocked");
+        }
+    }
+
+    public void UnlockPlatypusBeamFreeze()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFreeze = true;
+            platypusBeamFreezeBuy.SetActive(false);
+            platypusBeamFreezeUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Freeze Unlocked");
+        }
+    }
+
+    public void UnlockPlatypusBeamFire()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFire = true;
+            platypusBeamFireBuy.SetActive(false);
+            platypusBeamFireUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Fire Unlocked");
+        }
+    }
+
+    public void UnlockPlatypusBeamFire()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFire = true;
+            platypusBeamFireBuy.SetActive(false);
+            platypusBeamFireUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Fire Unlocked");
+        }
+    }
+
+    public void UnlockPlatypusBeamFire()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFire = true;
+            platypusBeamFireBuy.SetActive(false);
+            platypusBeamFireUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Fire Unlocked");
+        }
+    }
+    public void UnlockPlatypusBeamFire()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.platypusBeamFire = true;
+            platypusBeamFireBuy.SetActive(false);
+            platypusBeamFireUnlocked.SetActive(true);
+            Debug.Log("Platypus Beam Fire Unlocked");
+        }
+    }
+
+
+
+
+    public void UnlockBeeAttack()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.quackAttack = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+            Debug.Log("Quack Attack Unlocked");
+        }
+    }
+
+    #endregion
+
     // sets pet rock to true and all other weapons to false
     public void SelectPetRock()
     {
-        // pet rock equipped
         PetRockSelected = true;
         UnselectQuackAttack();
         Debug.Log("Rock attack selected");
-      //  petRockButtonUnlocked.GetComponent<Image>().color = Color.magenta;
         Button b = petRockButtonUnlocked.GetComponent<Button>();
+        // button color changes when selected
         ColorBlock cb = b.colors;
         cb.normalColor = Color.magenta;
         b.colors = cb;
+        // choose the text displayed when item is selected
+        textTitle.text = "Pet Rock";
+        textDescription.text = "Fires a projectile";
     }
+
 
     public void UnselectPetRock()
     {

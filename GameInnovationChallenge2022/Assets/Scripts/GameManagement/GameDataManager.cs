@@ -18,17 +18,17 @@ public class GameDataManager: MonoBehaviour
 
     // check whether player has these pet rock abilities unlocked
     public bool petRock;
-    public bool shatterShot;
-    public bool volcanic;
-    public bool lava;
+    public bool petRockShatterShot;
+    public bool petRockVolcanic;
+    public bool petRockLava;
 
     // check whether player has these platypus abilities unlocked
     public bool platypusBeam;
-    public bool fire;
-    public bool freeze;
-    public bool explode;
-    public bool deepFreeze;
-    public bool twinBeam;
+    public bool platypusBeamFire;
+    public bool platypusBeamFreeze;
+    public bool platypusBeamExplode;
+    public bool platypusBeamDeepFreeze;
+    public bool platypusBeamTwinBeam;
 
     // check whether player has these quackAttack abilities unlocked
     public bool quackAttack;
@@ -55,9 +55,9 @@ public class GameDataManager: MonoBehaviour
         this.skillPoints = skillPoints;
         this.timesDied = timesDied;
         this.petRock = petRock;
-        this.shatterShot = shatterShot;
-        this.volcanic = volcanic;
-        this.lava = lava;
+        this.petRockShatterShot = shatterShot;
+        this.petRockVolcanic = volcanic;
+        this.petRockLava = lava;
         return;
     }
 
