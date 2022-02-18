@@ -2,35 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public static class SoundManager
 {
-    public static SoundManager Instance;
-
-    [SerializeField] private AudioSource _musicSource, _effectsSource;
-
-    private void Awake()
-    {
-        if (Instance = null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public void PlaySound(AudioClip clip)
-    {
-        _effectsSource.PlayOneShot(clip);   
-    }
-
     //Code Monkey's SoundManager Tutorial
-    /*public static void PlaySound()
+
+    public enum Sound
+    {
+        MenuSelect,
+        MenuClick,
+    }
+
+    public static void PlaySound(Sound sound)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-    }*/
+        audioSource.PlayOneShot(GetAudioClip(sound));
+    }
+
+    private static AudioClip GetAudioClip(Sound sound)
+    {
+        foreach (GameAssets.SoundAudioClip soundAudioClip in GameAssets.i.soundAduioClipArray)
+        {
+            if (soundAudioClip.sound == sound)
+            {
+                return soundAudioClip.audioClip;
+            }
+        }
+        Debug.LogError("Sound" + sound + "Not Found");
+        return null;
+    }
+
 
 }
