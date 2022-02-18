@@ -83,10 +83,8 @@ public class SkillTreeMaster : MonoBehaviour
     public TMP_Text textTitle;
     public TMP_Text textDescription;
 
-    public Button button;
-
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         if(gameDataManager.petRock == false)
         {
@@ -121,7 +119,7 @@ public class SkillTreeMaster : MonoBehaviour
             petRockVolcanicButtonUnlocked.SetActive(true);
         }
 
-        if (gameDataManager.petRockVolcanic == false)
+        if (gameDataManager.petRockLava == false)
         {
             petRockLavaButtonBuy.SetActive(true);
             petRockLavaButtonUnlocked.SetActive(false);
@@ -142,12 +140,6 @@ public class SkillTreeMaster : MonoBehaviour
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 

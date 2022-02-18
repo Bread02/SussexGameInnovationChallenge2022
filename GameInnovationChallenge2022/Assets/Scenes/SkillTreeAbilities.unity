@@ -2423,23 +2423,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPoints: 2
   petRock: 0
-  shatterShot: 0
-  volcanic: 0
-  lava: 0
+  petRockShatterShot: 0
+  petRockVolcanic: 0
+  petRockLava: 0
   platypusBeam: 0
-  fire: 0
-  freeze: 0
-  explode: 0
-  deepFreeze: 0
-  twinBeam: 0
+  platypusBeamFire: 0
+  platypusBeamFreeze: 0
+  platypusBeamExplode: 0
+  platypusBeamDeepFreeze: 0
+  platypusBeamTwinBeam: 0
   quackAttack: 0
-  echo: 0
-  raze: 0
-  feather: 0
-  bees: 0
-  honey: 0
-  poisonSting: 0
-  queenBee: 0
+  quackAttackEcho: 0
+  quackAttackRaze: 0
+  quackAttackFeather: 0
+  beeAttack: 0
+  beeAttackHoney: 0
+  beeAttackPoisonSting: 0
+  beeAttackQueenBee: 0
   petRockSelected: 0
   platypusBeamSelected: 0
   quackAttackSelected: 0
@@ -2986,18 +2986,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillPoints: 0
   gameDataManager: {fileID: 636553333}
-  petRockButtonBuy: {fileID: 0}
-  petRockButtonUnlocked: {fileID: 0}
-  ShatterShotButtonBuy: {fileID: 0}
-  ShatterShotButtonUnlocked: {fileID: 0}
-  VolcanicButtonBuy: {fileID: 0}
-  VolcanicButtonUnlocked: {fileID: 0}
-  LavaButtonBuy: {fileID: 0}
-  LavaButtonUnlocked: {fileID: 0}
-  quackAttackBuy: {fileID: 0}
-  quackAttackUnlocked: {fileID: 0}
+  petRockButtonBuy: {fileID: 1609593704}
+  petRockButtonUnlocked: {fileID: 246587336}
+  petRockShatterShotButtonBuy: {fileID: 1302104435}
+  petRockShatterShotButtonUnlocked: {fileID: 1510688392}
+  petRockVolcanicButtonBuy: {fileID: 1947063868}
+  petRockVolcanicButtonUnlocked: {fileID: 210194783}
+  petRockLavaButtonBuy: {fileID: 1286454805}
+  petRockLavaButtonUnlocked: {fileID: 1657213574}
+  quackAttackBuy: {fileID: 1816236727}
+  quackAttackUnlocked: {fileID: 1174318049}
+  quackAttackEchoBuy: {fileID: 708924199}
+  quackAttackEchoUnlocked: {fileID: 1194723529}
+  quackAttackRazeBuy: {fileID: 826298538}
+  quackAttackRazeUnlocked: {fileID: 935677323}
+  quackAttackFeatherBuy: {fileID: 774048653}
+  quackAttackFeatherUnlocked: {fileID: 436213319}
+  platypusBeamBuy: {fileID: 620057594}
+  platypusBeamUnlocked: {fileID: 506542823}
+  platypusBeamFireBuy: {fileID: 735710424}
+  platypusBeamFireUnlocked: {fileID: 2037164672}
+  platypusBeamFreezeBuy: {fileID: 159699706}
+  platypusBeamFreezeUnlocked: {fileID: 848162322}
+  platypusBeamExplodeBuy: {fileID: 1478380517}
+  platypusBeamExplodeUnlocked: {fileID: 1208172072}
+  platypusBeamDeepFreezeBuy: {fileID: 57763391}
+  platypusBeamDeepFreezeUnlocked: {fileID: 1930672269}
+  platypusBeamTwinBeamBuy: {fileID: 1590489278}
+  platypusBeamTwinBeamUnlocked: {fileID: 1450170547}
+  beeAttackBuy: {fileID: 648837009}
+  beeAttackUnlock: {fileID: 1192313027}
+  beeAttackHoneyBuy: {fileID: 946869340}
+  beeAttackHoneyUnlock: {fileID: 1734596702}
+  beeAttackPoisonStingBuy: {fileID: 1341930817}
+  beeAttackPoisonStingUnlock: {fileID: 941309252}
+  beeAttackQueenBeeBuy: {fileID: 941293050}
+  beeAttackQueenBeeUnlock: {fileID: 1401233919}
   PetRockSelected: 0
   QuackAttackSelected: 0
+  textTitle: {fileID: 0}
+  textDescription: {fileID: 0}
   button: {fileID: 0}
 --- !u!4 &768322031
 Transform:
