@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this attack fires a beam towards the cursor position
 public class PlayerBeamAttack : MonoBehaviour
 {
     [SerializeField] private GameObject beam;
     [SerializeField] private GameObject beamPivot;
     private GameObject player;
-    [SerializeField] public PlayerActionControls playerActionControls;
+    [SerializeField] private PlayerActionControls playerActionControls;
 
     [SerializeField] private bool fire;
     [SerializeField] private bool fireCooldown;
@@ -65,10 +66,8 @@ public class PlayerBeamAttack : MonoBehaviour
 
     IEnumerator FireCooldown()
     {
-        //   Debug.Log("In Coroutine");
         yield return new WaitForSeconds(1);
         beam.SetActive(false);
         fireCooldown = false;
-        //  Debug.Log("Coroutine Ended");
     }
 }

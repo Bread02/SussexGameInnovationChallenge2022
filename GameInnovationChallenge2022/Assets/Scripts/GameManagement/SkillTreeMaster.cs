@@ -79,6 +79,7 @@ public class SkillTreeMaster : MonoBehaviour
 
     public bool QuackAttackSelected;
 
+    // the item name and description
     public TMP_Text textTitle;
     public TMP_Text textDescription;
 
@@ -151,6 +152,9 @@ public class SkillTreeMaster : MonoBehaviour
     }
 
     #region Unlock Buttons
+
+    #region Pet Rock Unlock Buttons
+    // pet rock unlocks
     public void UnlockPetRock()
     {
         Debug.Log("CLICK");
@@ -163,7 +167,45 @@ public class SkillTreeMaster : MonoBehaviour
         }
     }
 
+    public void UnlockPetRockShatterShot()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.petRockShatterShot = true;
+            petRockButtonBuy.SetActive(false);
+            petRockButtonUnlocked.SetActive(true);
+            Debug.Log("Pet Rock Unlocked");
+        }
+    }
 
+    public void UnlockPetRockVolcanic()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.petRockVolcanic = true;
+            petRockButtonBuy.SetActive(false);
+            petRockButtonUnlocked.SetActive(true);
+            Debug.Log("Pet Rock Unlocked");
+        }
+    }
+
+    public void UnlockPetRockLava()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.petRockLava = true;
+            petRockButtonBuy.SetActive(false);
+            petRockButtonUnlocked.SetActive(true);
+            Debug.Log("Pet Rock Unlocked");
+        }
+    }
+
+    #endregion
+
+    #region Quack Attack Unlock Buttons
     public void UnlockQuackAttack()
     {
         Debug.Log("CLICK");
@@ -172,20 +214,53 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttack = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
-            Debug.Log("Quack Attack Unlocked");
         }
     }
 
+    public void UnlockQuackAttackEcho()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.quackAttackEcho = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+
+    public void UnlockQuackAttackRaze()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.quackAttackRaze = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+
+    public void UnlockQuackAttackFeather()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.quackAttackFeather = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+    #endregion
+
+    #region Platypus Unlock Buttons
     // Platypus Beam Unlocks
     public void UnlockPlatypusBeam()
     {
         Debug.Log("CLICK");
         if (gameDataManager.skillPoints > 0)
         {
-            gameDataManager.quackAttack = true;
+            gameDataManager.platypusBeam = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
-            Debug.Log("Quack Attack Unlocked");
         }
     }
 
@@ -197,7 +272,6 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.platypusBeamFire = true;
             platypusBeamFireBuy.SetActive(false);
             platypusBeamFireUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Fire Unlocked");
         }
     }
 
@@ -209,71 +283,88 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.platypusBeamFreeze = true;
             platypusBeamFreezeBuy.SetActive(false);
             platypusBeamFreezeUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Freeze Unlocked");
         }
     }
 
-    public void UnlockPlatypusBeamFire()
+    public void UnlockPlatypusBeamExplode()
     {
         Debug.Log("CLICK");
         if (gameDataManager.skillPoints > 0)
         {
-            gameDataManager.platypusBeamFire = true;
+            gameDataManager.platypusBeamExplode = true;
             platypusBeamFireBuy.SetActive(false);
             platypusBeamFireUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Fire Unlocked");
         }
     }
 
-    public void UnlockPlatypusBeamFire()
+    public void UnlockPlatypusBeamDeepFreeze()
     {
         Debug.Log("CLICK");
         if (gameDataManager.skillPoints > 0)
         {
-            gameDataManager.platypusBeamFire = true;
+            gameDataManager.platypusBeamDeepFreeze = true;
             platypusBeamFireBuy.SetActive(false);
             platypusBeamFireUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Fire Unlocked");
         }
     }
 
-    public void UnlockPlatypusBeamFire()
+    public void UnlockPlatypusBeamTwinBeam()
     {
         Debug.Log("CLICK");
         if (gameDataManager.skillPoints > 0)
         {
-            gameDataManager.platypusBeamFire = true;
+            gameDataManager.platypusBeamTwinBeam = true;
             platypusBeamFireBuy.SetActive(false);
             platypusBeamFireUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Fire Unlocked");
         }
     }
-    public void UnlockPlatypusBeamFire()
-    {
-        Debug.Log("CLICK");
-        if (gameDataManager.skillPoints > 0)
-        {
-            gameDataManager.platypusBeamFire = true;
-            platypusBeamFireBuy.SetActive(false);
-            platypusBeamFireUnlocked.SetActive(true);
-            Debug.Log("Platypus Beam Fire Unlocked");
-        }
-    }
+    #endregion
 
-
-
-
+    #region Bee Attack Unlock Buttons
     public void UnlockBeeAttack()
     {
         Debug.Log("CLICK");
         if (gameDataManager.skillPoints > 0)
         {
-            gameDataManager.quackAttack = true;
+            gameDataManager.beeAttack = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
-            Debug.Log("Quack Attack Unlocked");
         }
     }
+
+    public void UnlockBeeAttackHoney()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.beeAttackHoney = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+
+    public void UnlockBeeAttackPoisonSting()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.beeAttackPoisonSting = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+
+    public void UnlockBeeAttackQueenBee()
+    {
+        Debug.Log("CLICK");
+        if (gameDataManager.skillPoints > 0)
+        {
+            gameDataManager.beeAttackQueenBee = true;
+            quackAttackBuy.SetActive(false);
+            quackAttackUnlocked.SetActive(true);
+        }
+    }
+    #endregion
 
     #endregion
 

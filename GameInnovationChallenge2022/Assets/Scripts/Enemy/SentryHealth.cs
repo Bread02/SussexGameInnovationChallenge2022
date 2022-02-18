@@ -85,7 +85,7 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
         {
             BeamDamage();
             Debug.Log("COllided with beam");
-            if(gameDataManager.fire == true)
+            if(gameDataManager.platypusBeamFire == true)
             {
                 FireDamage();
             }

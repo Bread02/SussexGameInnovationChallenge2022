@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// this class checks the Game Data to see what abilities the player has selected and applies them to scene
+// this class checks the Game Data to see what abilities the player has selected and applies them to scene. This script is attached to the player.
 public class PlayerAbilityCheck : MonoBehaviour
 {
 
     [SerializeField] private GameDataManager gameDataManager;
-
 
     //weapon scripts
     [SerializeField] private PlayerBeamAttack playerBeamAttack;
@@ -16,7 +15,7 @@ public class PlayerAbilityCheck : MonoBehaviour
     [SerializeField] private PlayerProjectileGun playerProjectileGun;
 
 
-    // Start is called before the first frame update
+    // All abilities are set to false by default
     void Start()
     {
         playerProjectileGun.enabled = false;
@@ -26,6 +25,7 @@ public class PlayerAbilityCheck : MonoBehaviour
         SelectedWeapon();
     }
 
+    // Abilities are enabled depending whether they are 'true' in the game data manager
     void SelectedWeapon()
     {
         if(gameDataManager.SelectedWeapon() == 0)
@@ -49,7 +49,8 @@ public class PlayerAbilityCheck : MonoBehaviour
             SelectedBeeSwarmUpgrades();
         }
     }
-
+    
+    // Work in progress
     void SelectedProjectileGunUpgrades()
     {
 
@@ -68,11 +69,5 @@ public class PlayerAbilityCheck : MonoBehaviour
     void SelectedBeeSwarmUpgrades()
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

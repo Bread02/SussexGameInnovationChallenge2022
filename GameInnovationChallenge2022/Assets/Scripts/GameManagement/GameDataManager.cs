@@ -4,16 +4,18 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-// keeps track of player inventory, points, skills, etc.
+// keeps track of player inventory, points, skills, etc. This script must be ran at all times.
+// This script also saves the game, but saving functions are still Work In Progress
 public class GameDataManager: MonoBehaviour
 {
     public int skillPoints;
     private int timesDied;
     private GameDataManager gameDataManager;
 
+    // Makes this gameobject this is attached to not destroyed on scene changes.
     private void Awake()
     {
-      //  DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // check whether player has these pet rock abilities unlocked
@@ -32,15 +34,15 @@ public class GameDataManager: MonoBehaviour
 
     // check whether player has these quackAttack abilities unlocked
     public bool quackAttack;
-    public bool echo;
-    public bool raze;
-    public bool feather;
+    public bool quackAttackEcho;
+    public bool quackAttackRaze;
+    public bool quackAttackFeather;
 
     //check whether player has these bees abilities unlocked;
-    public bool bees;
-    public bool honey;
-    public bool poisonSting;
-    public bool queenBee;
+    public bool beeAttack;
+    public bool beeAttackHoney;
+    public bool beeAttackPoisonSting;
+    public bool beeAttackQueenBee;
 
     // check which weapon is selected
     public bool petRockSelected;

@@ -5,12 +5,10 @@ using System.Linq;
 
 public class PlayerProjectileMovement : MonoBehaviour
 {
-
-  //  public Rigidbody2D rb;
     public GameObject projectile;
     public float projectileSpeed;
     public GameObject cursor;
-    public GameObject player;
+    [SerializeField] private GameObject player;
     public GameObject sentry;
     [SerializeField] private List<GameObject> damageableGameObjects;
 

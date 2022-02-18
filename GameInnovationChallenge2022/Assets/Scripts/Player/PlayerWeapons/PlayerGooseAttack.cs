@@ -4,14 +4,15 @@ using UnityEngine;
 
 // This is a coned area of attack weapon.
 // The intended area of attack angle is 90' of where the mouse faces
+// The cone will only activate when the player 'fires' the weapon.
 public class PlayerGooseAttack : MonoBehaviour
 {
     [SerializeField] private int attackAngle;
     [SerializeField] private int damage;
-    [SerializeField] public PlayerActionControls playerActionControls;
+    [SerializeField] private PlayerActionControls playerActionControls;
     [SerializeField] private int WeaponCooldownTime;
-    public bool fire;
-    public bool fireCooldown;
+    private bool fire;
+    private bool fireCooldown;
     public GameObject shootPoint;
     public GameObject semiCircle;
 
@@ -20,20 +21,17 @@ public class PlayerGooseAttack : MonoBehaviour
     private void OnEnable()
     {
         playerActionControls.Enable();
-
     }
 
     private void OnDisable()
     {
         playerActionControls.Disable();
-
     } 
 
     private void Awake()
     {
         semiCircle.SetActive(false);
         playerActionControls = new PlayerActionControls();
-
         playerActionControls.PlayerControls.PlayerFireWeapon.performed += ctx => fire = true;
         playerActionControls.PlayerControls.PlayerFireWeapon.canceled += ctx => fire = false;
     }
@@ -70,10 +68,8 @@ public class PlayerGooseAttack : MonoBehaviour
 
     IEnumerator FireCooldown()
     {
-     //   Debug.Log("In Coroutine");
         yield return new WaitForSeconds(WeaponCooldownTime);
         semiCircle.SetActive(false);
         fireCooldown = false;
-      //  Debug.Log("Coroutine Ended");
     }
 }
