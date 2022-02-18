@@ -11,6 +11,7 @@ using TMPro;
 public class SkillTreeMaster : MonoBehaviour
 {
     public int skillPoints;
+    public int unlockedAbilityAndWeaponCount;
     [SerializeField] private GameDataManager gameDataManager;
 
     #region Buttons
@@ -155,7 +156,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRock = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -167,7 +168,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockShatterShot = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -179,7 +180,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockVolcanic = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -191,7 +192,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockLava = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -206,6 +207,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttack = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -217,6 +219,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackEcho = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -228,6 +231,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackRaze = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -239,6 +243,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackFeather = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
     #endregion
@@ -321,6 +326,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttack = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -332,6 +338,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackHoney = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -343,6 +350,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackPoisonSting = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -354,6 +362,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackQueenBee = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
     #endregion
