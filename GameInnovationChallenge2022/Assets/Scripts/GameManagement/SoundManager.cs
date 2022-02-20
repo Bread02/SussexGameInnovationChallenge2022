@@ -10,7 +10,10 @@ public static class SoundManager
     {
         MenuSelect,
         MenuClick,
+        MainMenu1,
+        MainMenu2,
     }
+
 
     public static void PlaySound(Sound sound)
     {

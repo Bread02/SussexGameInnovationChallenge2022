@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267d542c6d7f75b40a8728cf5fcdacd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 0}
+  pauseScreen: {fileID: 8740757286249667552, guid: 01e0be1cd063bbc42bca44ef5245c506, type: 3}

@@ -31,8 +31,21 @@ public class DraftScript : MonoBehaviour
     {
         _effectsSource.PlayOneShot(clip);   
     }
-     * 
-     * 
-     */
+
+    //Old Input; PauseMenu script; void Update() method
+     * /*if (Input.GetKeyDown(pauseKey))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+                //pauseSFX.PlayOneShot(effectSFX);
+            }
+            else
+            {
+                PauseGame();
+                //pauseSFX.PlayOneShot(effectSFX);
+            }
+        }*/
+     
 
 }

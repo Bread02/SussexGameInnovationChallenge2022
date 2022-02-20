@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Awake()
+    {
+        SoundManager.PlaySound(SoundManager.Sound.MainMenu1);
+    }
+
     public void PlayGame()
     {
-       //load Game Scene
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 
     public void Options()
