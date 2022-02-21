@@ -12,8 +12,46 @@ public static class SoundManager
         MenuClick,
         MainMenu1,
         MainMenu2,
+        PlayerMove
     }
 
+    private static Dictionary<Sound, float> soundTimerDictionary;
+
+    public static void Initialize()
+    {
+        soundTimerDictionary = new Dictionary<Sound, float>();
+
+    }
+
+    private static bool CanPlaySound(Sound sound)
+    {
+        switch (sound)
+        {
+            default:
+                return true;
+            case Sound.PlayerMove:
+                if (soundTimerDictionary.ContainsKey(sound))
+                {
+                    float lastTimePlayed = soundTimerDictionary[sound];
+                    float playerMoveTimeMax = 0.05f;
+                    if (lastTimePlayed + playerMoveTimeMax < Time.time)
+                    {
+                        soundTimerDictionary[sound] = Time.time;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+                break;
+                
+        }
+    }
 
     public static void PlaySound(Sound sound)
     {
