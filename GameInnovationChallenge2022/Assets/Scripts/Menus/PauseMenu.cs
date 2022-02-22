@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         playerActionControls = new PlayerActionControls();
+        SoundManager.Initialize();
         playerActionControls.PlayerControls.Pause.started += ctx => isPaused = true;
         playerActionControls.PlayerControls.Pause.canceled += ctx => isPaused = false;
        

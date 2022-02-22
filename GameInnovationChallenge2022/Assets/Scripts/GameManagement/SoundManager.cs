@@ -20,6 +20,7 @@ public static class SoundManager
     public static void Initialize()
     {
         soundTimerDictionary = new Dictionary<Sound, float>();
+        soundTimerDictionary[Sound.PlayerMove] = 0f;
 
     }
 
@@ -48,13 +49,14 @@ public static class SoundManager
                 {
                     return true;
                 }
-                break;
-                
+                //break;
+
         }
     }
 
     public static void PlaySound(Sound sound)
     {
+        //in other scripts, use SoundManager.Playsound(SoundManager.Sound.{the sound enum});
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.PlayOneShot(GetAudioClip(sound));
