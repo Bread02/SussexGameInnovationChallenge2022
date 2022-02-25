@@ -76,7 +76,7 @@ public class SkillTreeMaster : MonoBehaviour
 
     // Selections
     public bool PetRockSelected;
-
+    public bool platypusBeamSelected;
 
     public bool QuackAttackSelected;
 
@@ -368,7 +368,7 @@ public class SkillTreeMaster : MonoBehaviour
     #endregion
 
     #endregion
-
+    #region Select/unselect Buttons
     // sets pet rock to true and all other weapons to false
     public void SelectPetRock()
     {
@@ -413,7 +413,6 @@ public class SkillTreeMaster : MonoBehaviour
         QuackAttackSelected = true;
         Debug.Log("Quack attack selected");
         UnselectPetRock();
-
         Button b = quackAttackUnlocked.GetComponent<Button>();
         ColorBlock cb = b.colors;
         cb.normalColor = Color.magenta;
@@ -440,6 +439,43 @@ public class SkillTreeMaster : MonoBehaviour
             return false;
         }
     }
+
+    public void SelectPlatypusBeamAttack()
+    {
+        PetRockSelected = false;
+        QuackAttackSelected = false;
+        platypusBeamSelected = true;
+        Debug.Log("Platypus Beam attack selected");
+        UnselectPetRock();
+        UnselectQuackAttack();
+        Button b = quackAttackUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.magenta;
+        b.colors = cb;
+    }
+
+    public void UnselectPlatypusBeamAttack()
+    {
+        platypusBeamSelected = false;
+        Button b = quackAttackUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.green;
+        b.colors = cb;
+    }
+
+    public bool BoolPlatypusBeamSelected()
+    {
+        if (platypusBeamSelected == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
 
 
 }
