@@ -65,8 +65,15 @@ public static class SoundManager
             oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
             
         }
-        oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
-
+        if (oneShotGameObject != null)
+        {
+            oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
+        }
+        else
+        {
+            Debug.LogError("Missing oneshotAudioSource");
+        }
+        
     }
 
     private static AudioClip GetAudioClip(Sound sound)

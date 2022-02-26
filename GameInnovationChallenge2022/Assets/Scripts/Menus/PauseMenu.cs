@@ -15,10 +15,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         playerActionControls = new PlayerActionControls();
-        SoundManager.Initialize();
-        playerActionControls.PlayerControls.Pause.started += ctx => isPaused = true;
-        playerActionControls.PlayerControls.Pause.canceled += ctx => isPaused = false;
-       
+        SoundManager.Initialize();              
     }
     private void OnEnable()
     {
@@ -31,14 +28,7 @@ public class PauseMenu : MonoBehaviour
     
     void Update()
     {
-        if (isPaused == true)
-        {
-            PauseGame();
-        }
-        else
-        {
-            ResumeGame();
-        }
+        
     }
 
     public void PauseGame()
