@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 // keeps track of player inventory, points, skills, etc. This script must be ran at all times.
 // This script also saves the game, but saving functions are still Work In Progress
+// Saving has all been disabled as this is low priority task.
 public class GameDataManager: MonoBehaviour
 {
     public int skillPoints;
@@ -63,7 +64,7 @@ public class GameDataManager: MonoBehaviour
         return;
     }
 
-
+    /*
     private void ReadFromSave()
     {
         //Load achievments
@@ -90,7 +91,7 @@ public class GameDataManager: MonoBehaviour
         Debug.Log("Writing Player Save");
 
         BinaryFormatter formatter = new BinaryFormatter();
-        /*CreateSaveDirectoryPaths();*/
+        CreateSaveDirectoryPaths();
         string filePath = $"{Application.persistentDataPath}/Save/gameData.save";
         FileStream stream = new FileStream(filePath, FileMode.Create);
         string json = JsonUtility.ToJson(gameDataManager);
@@ -98,14 +99,14 @@ public class GameDataManager: MonoBehaviour
         stream.Close();
         Debug.Log("Saved gameData.");
 
-        /*
+        
         filePath = $"{Application.persistentDataPath}/Save/endings.save";
         stream = new FileStream(filePath, FileMode.Create);
         string json2 = JsonUtility.ToJson(endingsUnlocked);
         formatter.Serialize(stream, json2);
         stream.Close();
         Debug.Log("Saved End.");
-        */
+        
     }
 
 
@@ -114,13 +115,15 @@ public class GameDataManager: MonoBehaviour
         WriteToSave();
         Debug.Log("Save complete");
     }
+    */
+
 
     // Start is called before the first frame update
     void Start()
     {
-        SelectedWeapon();
+    //    SelectedWeapon();
      //   ReadFromSave();
-        WriteToSave();
+      //  WriteToSave();
 
     }
 

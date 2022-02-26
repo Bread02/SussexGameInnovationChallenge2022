@@ -11,6 +11,7 @@ using TMPro;
 public class SkillTreeMaster : MonoBehaviour
 {
     public int skillPoints;
+    public int unlockedAbilityAndWeaponCount;
     [SerializeField] private GameDataManager gameDataManager;
 
     #region Buttons
@@ -61,32 +62,30 @@ public class SkillTreeMaster : MonoBehaviour
 
     // Bee attacks and abilities
     [SerializeField] private GameObject beeAttackBuy;
-    [SerializeField] private GameObject beeAttackUnlock;
+    [SerializeField] private GameObject beeAttackUnlocked;
 
     [SerializeField] private GameObject beeAttackHoneyBuy;
-    [SerializeField] private GameObject beeAttackHoneyUnlock;
+    [SerializeField] private GameObject beeAttackHoneyUnlocked;
 
     [SerializeField] private GameObject beeAttackPoisonStingBuy;
-    [SerializeField] private GameObject beeAttackPoisonStingUnlock;
+    [SerializeField] private GameObject beeAttackPoisonStingUnlocked;
 
     [SerializeField] private GameObject beeAttackQueenBeeBuy;
-    [SerializeField] private GameObject beeAttackQueenBeeUnlock;
+    [SerializeField] private GameObject beeAttackQueenBeeUnlocked;
     #endregion
 
     // Selections
     public bool PetRockSelected;
-
-
+    public bool platypusBeamSelected;
+    public bool beeAttackSelected;
     public bool QuackAttackSelected;
 
     // the item name and description
     public TMP_Text textTitle;
     public TMP_Text textDescription;
 
-    public Button button;
-
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         if(gameDataManager.petRock == false)
         {
@@ -121,7 +120,7 @@ public class SkillTreeMaster : MonoBehaviour
             petRockVolcanicButtonUnlocked.SetActive(true);
         }
 
-        if (gameDataManager.petRockVolcanic == false)
+        if (gameDataManager.petRockLava == false)
         {
             petRockLavaButtonBuy.SetActive(true);
             petRockLavaButtonUnlocked.SetActive(false);
@@ -142,13 +141,47 @@ public class SkillTreeMaster : MonoBehaviour
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
         }
+        if(gameDataManager.quackAttackEcho == false)
+        {
+            quackAttackEchoBuy.SetActive(true);
+            quackAttackEchoUnlocked.SetActive(false);
+        }
 
-    }
+        if (gameDataManager.quackAttackRaze == false)
+        {
+            quackAttackRazeBuy.SetActive(true);
+            quackAttackRazeUnlocked.SetActive(false);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (gameDataManager.quackAttackFeather == false)
+        {
+            quackAttackFeatherBuy.SetActive(true);
+            quackAttackFeatherUnlocked.SetActive(false);
+        }
 
+        if (gameDataManager.beeAttack == false)
+        {
+            beeAttackBuy.SetActive(true);
+            beeAttackUnlocked.SetActive(false);
+        }
+        
+        if (gameDataManager.beeAttackHoney == false)
+        {
+            beeAttackHoneyBuy.SetActive(true);
+            beeAttackHoneyUnlocked.SetActive(false);
+        }
+
+        if(gameDataManager.beeAttackPoisonSting == false)
+        {
+            beeAttackPoisonStingBuy.SetActive(true);
+            beeAttackPoisonStingUnlocked.SetActive(false);
+        }
+
+        if(gameDataManager.beeAttackQueenBee == false)
+        {
+            beeAttackPoisonStingBuy.SetActive(true);
+            beeAttackPoisonStingUnlocked.SetActive(false);
+        }
     }
 
     #region Unlock Buttons
@@ -163,7 +196,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRock = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -175,7 +208,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockShatterShot = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -187,7 +220,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockVolcanic = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -199,7 +232,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.petRockLava = true;
             petRockButtonBuy.SetActive(false);
             petRockButtonUnlocked.SetActive(true);
-            Debug.Log("Pet Rock Unlocked");
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -214,6 +247,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttack = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -225,6 +259,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackEcho = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -236,6 +271,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackRaze = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -247,6 +283,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.quackAttackFeather = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
     #endregion
@@ -259,8 +296,8 @@ public class SkillTreeMaster : MonoBehaviour
         if (gameDataManager.skillPoints > 0)
         {
             gameDataManager.platypusBeam = true;
-            quackAttackBuy.SetActive(false);
-            quackAttackUnlocked.SetActive(true);
+            platypusBeamBuy.SetActive(false);
+            platypusBeamUnlocked.SetActive(true);
         }
     }
 
@@ -327,8 +364,9 @@ public class SkillTreeMaster : MonoBehaviour
         if (gameDataManager.skillPoints > 0)
         {
             gameDataManager.beeAttack = true;
-            quackAttackBuy.SetActive(false);
-            quackAttackUnlocked.SetActive(true);
+            beeAttackBuy.SetActive(false);
+            beeAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -340,6 +378,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackHoney = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -351,6 +390,7 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackPoisonSting = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
 
@@ -362,17 +402,20 @@ public class SkillTreeMaster : MonoBehaviour
             gameDataManager.beeAttackQueenBee = true;
             quackAttackBuy.SetActive(false);
             quackAttackUnlocked.SetActive(true);
+            unlockedAbilityAndWeaponCount++;
         }
     }
     #endregion
 
     #endregion
-
+    #region Select/unselect Buttons
     // sets pet rock to true and all other weapons to false
     public void SelectPetRock()
     {
         PetRockSelected = true;
         UnselectQuackAttack();
+        UnselectBeeAttack();
+        UnselectPlatypusBeamAttack();
         Debug.Log("Rock attack selected");
         Button b = petRockButtonUnlocked.GetComponent<Button>();
         // button color changes when selected
@@ -412,7 +455,8 @@ public class SkillTreeMaster : MonoBehaviour
         QuackAttackSelected = true;
         Debug.Log("Quack attack selected");
         UnselectPetRock();
-
+        UnselectBeeAttack();
+        UnselectPlatypusBeamAttack();
         Button b = quackAttackUnlocked.GetComponent<Button>();
         ColorBlock cb = b.colors;
         cb.normalColor = Color.magenta;
@@ -439,6 +483,78 @@ public class SkillTreeMaster : MonoBehaviour
             return false;
         }
     }
+
+    public void SelectPlatypusBeamAttack()
+    {
+        PetRockSelected = false;
+        QuackAttackSelected = false;
+        platypusBeamSelected = true;
+        Debug.Log("Platypus Beam attack selected");
+        UnselectPetRock();
+        UnselectQuackAttack();
+        UnselectBeeAttack();
+        Button b = platypusBeamUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.magenta;
+        b.colors = cb;
+    }
+
+    public void UnselectPlatypusBeamAttack()
+    {
+        platypusBeamSelected = false;
+        Button b = platypusBeamUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.green;
+        b.colors = cb;
+    }
+
+    public bool BoolPlatypusBeamSelected()
+    {
+        if (platypusBeamSelected == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void SelectBeeAttack()
+    {
+        beeAttackSelected = true;
+        Debug.Log("Platypus Beam attack selected");
+        UnselectPetRock();
+        UnselectQuackAttack();
+        UnselectPlatypusBeamAttack();
+        Button b = beeAttackUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.magenta;
+        b.colors = cb;
+    }
+
+    public void UnselectBeeAttack()
+    {
+        beeAttackSelected = false;
+        Button b = beeAttackUnlocked.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.green;
+        b.colors = cb;
+    }
+
+    public bool BoolBeeSelected()
+    {
+        if (beeAttackSelected == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    #endregion
 
 
 }
