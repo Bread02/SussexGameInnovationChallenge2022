@@ -1902,6 +1902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8740757286249667552, guid: 01e0be1cd063bbc42bca44ef5245c506, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8740757286249667556, guid: 01e0be1cd063bbc42bca44ef5245c506, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
