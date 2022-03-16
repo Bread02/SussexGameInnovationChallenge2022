@@ -63,8 +63,23 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
         playerHealth -= 30;
     }
 
-    // player death
-    public void PlayerDeath()
+    public void GarbageProjectileDamage()
+    {
+        playerHealth -= 20;
+        Debug.Log("Enemy taken damage by enemy projectile");
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("player Collided with something");
+        if (collision.tag == "GarbageEnemyProjectile")
+        {
+            GarbageProjectileDamage();
+        }
+    }
+
+        // player death
+        public void PlayerDeath()
     {
         Debug.Log("Player has died");
     }

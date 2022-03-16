@@ -24,6 +24,11 @@ public class EnemyMissile : MonoBehaviour, IPlayerDamage
         missile.SetActive(false);
     }
 
+    public void GarbageProjectileDamage()
+    {
+    }
+
+
     public void Update()
     {
         player = GameObject.Find("Player");
@@ -37,6 +42,9 @@ public class EnemyMissile : MonoBehaviour, IPlayerDamage
         {
             MissileDamage();
         }
+
+
+
 
     }
 }

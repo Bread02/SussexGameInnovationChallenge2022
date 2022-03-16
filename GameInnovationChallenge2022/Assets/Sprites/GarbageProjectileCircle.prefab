@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7808758516240331833}
   m_Layer: 0
   m_Name: GarbageProjectileCircle
-  m_TagString: PlayerProjectile
+  m_TagString: GarbageEnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

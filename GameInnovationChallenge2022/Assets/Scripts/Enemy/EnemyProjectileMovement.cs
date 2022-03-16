@@ -33,9 +33,9 @@ public class EnemyProjectileMovement : MonoBehaviour
     {
         
         if (collision.tag == "Player")
-        { 
+        {
             // Make player take damage
-           // player.takeDamage()
+        //    IPlayerDamage.GarbageProjectileDamage();
         }
     }
 

@@ -5,5 +5,6 @@ using UnityEngine;
 public interface IPlayerDamage
 {
     void MissileDamage();
+    void GarbageProjectileDamage();
 
 }
