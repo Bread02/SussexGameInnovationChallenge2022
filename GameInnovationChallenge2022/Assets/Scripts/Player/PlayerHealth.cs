@@ -9,8 +9,9 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
 
     // player health foreground which is found in the HUD Canvas
     [SerializeField] private Image playerHealthFG;
-
+    [SerializeField] private GameObject DeathCanvas;
     [SerializeField] public PlayerActionControls playerActionControls;
+    [SerializeField] private GameObject DeathCanvasMenu;
 
     private bool healthLoss;
 
@@ -21,6 +22,8 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
         playerActionControls = new PlayerActionControls();
         playerActionControls.DebugControls.HealthLoss.performed += ctx => healthLoss = true;
         playerActionControls.DebugControls.HealthLoss.canceled += ctx => healthLoss = false;
+        DeathCanvas.SetActive(false);
+        DeathCanvasMenu.SetActive(false);
 
     }
     // the On enable and On disable connect the script to the new input scheme.
@@ -82,5 +85,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
         public void PlayerDeath()
     {
         Debug.Log("Player has died");
+        DeathCanvas.SetActive(true);
+        DeathCanvasMenu.SetActive(true);
     }
 }

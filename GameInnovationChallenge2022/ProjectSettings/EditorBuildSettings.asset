@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu/Credits.unity
     guid: df897646d4dc8514892e3b3d89ed2055
+  - enabled: 1
+    path: Assets/Scenes/BiomeOne.unity
+    guid: e9fbd3e561c7e8f4e9d0f28e07e8c003
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4179f1ad52d348e478f47e88583fe840, type: 2}
