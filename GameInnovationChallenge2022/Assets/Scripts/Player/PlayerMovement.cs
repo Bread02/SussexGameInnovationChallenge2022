@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject player;
     [SerializeField] public float speed;
     [SerializeField] private PlayerActionControls playerActionControls;
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     private float mouseAngle;
 
     // Start is called before the first frame update
