@@ -9,10 +9,10 @@ public class PlayerAbilityCheck : MonoBehaviour
     [SerializeField] private GameDataManager gameDataManager;
 
     //weapon scripts
-    [SerializeField] private PlayerBeamAttack playerBeamAttack;
-    [SerializeField] private PlayerBeeSwarmAttack playerBeeSwarmAttack;
-    [SerializeField] private PlayerGooseAttack playerGooseAttack;
-    [SerializeField] private PlayerProjectileGun playerProjectileGun;
+    [SerializeField] public PlayerBeamAttack playerBeamAttack;
+    [SerializeField] public PlayerBeeSwarmAttack playerBeeSwarmAttack;
+    [SerializeField] public PlayerGooseAttack playerGooseAttack;
+    [SerializeField] public PlayerProjectileGun playerProjectileGun;
 
 
     // All abilities are set to false by default

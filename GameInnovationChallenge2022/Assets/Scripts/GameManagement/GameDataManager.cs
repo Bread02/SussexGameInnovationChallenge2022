@@ -130,7 +130,6 @@ public class GameDataManager: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     // getter and setters

@@ -23,12 +23,12 @@ public class PlayerMovement : MonoBehaviour
     
     void FlipPlayer()
     {
-        player.GetComponent<SpriteRenderer>().flipX = true;
+        player.GetComponent<SpriteRenderer>().flipX = false;
     }
 
     void UnFlipPlayer()
     {
-        player.GetComponent<SpriteRenderer>().flipX = false;
+        player.GetComponent<SpriteRenderer>().flipX = true;
     }
     
 
