@@ -13,6 +13,10 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     [SerializeField] public PlayerActionControls playerActionControls;
     [SerializeField] private GameObject DeathCanvasMenu;
 
+    //player sprites
+    [SerializeField] private Sprite playerDamageSprite;
+    [SerializeField] private Sprite playerNormalSprite;
+
     private bool healthLoss;
 
 

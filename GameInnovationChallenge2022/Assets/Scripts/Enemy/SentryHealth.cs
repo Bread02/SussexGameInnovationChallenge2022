@@ -14,7 +14,7 @@ public class SentryHealth : MonoBehaviour, IEnemyDamage
     // Start is called before the first frame update
     void Start()
     {
-        sentryHealth = 100;
+        sentryHealth = 20;
         sentry = this.gameObject;
     }
 
