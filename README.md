@@ -19,3 +19,14 @@ a game about exloring, making mistakes, learning and healing nature - developed 
 :o: randomised environments and enemies
 :o: perma death and meta progression
 :o: accessibility features 
+
+## About the Game ##
+
+Outwild is a roguelite 2D Side ARPG game where you clear biomes to free them from corruption - each liberated biome will help restore life in your home biome. At the end of each biome there is a boss fight. Bosses are challenging but each fight will reward the player with materials to help rebuild abandoned settlements.
+
+The game features full vertical and horizontal movement unlike other roguelite side scrollers, there is no time limit on flying and gliding.
+
+If a player dies in a biome, they must restart that biome. They will only complete the biome and progress once they defeat the local boss. Skill progression is maintained and will carry over the next runs. Each attempt of a biome should get easier and easier once the player progresses through the skill tree.
+
+The objective of each run is to travel as further as possible to acquire material and survive to bring them home safely. More remote biomes are very hostile and dangerous but will also host valuable resources necessary to restore your home settlements.
+
