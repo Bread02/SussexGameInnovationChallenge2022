@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkingAnimation
+  m_Name: WalkingAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -23,7 +23,7 @@ AnimationClip:
       value: {fileID: 4287836069267579821, guid: 2948ee6cfba52ae419523600c16ecb8f, type: 3}
     - time: 0.13333334
       value: {fileID: 636515624737961492, guid: 2948ee6cfba52ae419523600c16ecb8f, type: 3}
-    - time: 0.3
+    - time: 0.28333333
       value: {fileID: -5669283932632373330, guid: 2948ee6cfba52ae419523600c16ecb8f, type: 3}
     - time: 0.41666666
       value: {fileID: -6372862417238439029, guid: 2948ee6cfba52ae419523600c16ecb8f, type: 3}

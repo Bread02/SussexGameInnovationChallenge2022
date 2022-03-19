@@ -15,22 +15,15 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
 
 
     //animations
-    [SerializeField] private AnimationClip hurtAnimation;
-    [SerializeField] private AnimationClip walkingAnimation;
 
-    private Animation hurtAnimationA;
-    private Animation walkingAnimationA;
+    public Animator anim;
 
     private bool healthLoss;
 
 
     private void Awake()
     {
-        hurtAnimationA = GetComponent<Animation>();
-        hurtAnimationA.clip = hurtAnimation;
-
-        walkingAnimationA = GetComponent<Animation>();
-        walkingAnimationA.clip = walkingAnimation;
+        anim = GetComponent<Animator>();
 
         // this connects the new input system to the health loss button, O.
         playerActionControls = new PlayerActionControls();
@@ -73,7 +66,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     void HealthLoss()
     {
         playerHealth -= 5;
-        hurtAnimationA.Play();
+        anim.SetBool("isHurting", true);
 
         StartCoroutine(Hurt());
     }
@@ -81,7 +74,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     public void MissileDamage()
     {
         playerHealth -= 30;
-        hurtAnimationA.Play();
+        anim.SetBool("isHurting", true);
         StartCoroutine(Hurt());
     }
 
@@ -89,7 +82,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     {
         playerHealth -= 20;
         Debug.Log("Enemy taken damage by enemy projectile");
-        hurtAnimationA.Play();
+        anim.SetBool("isHurting", true);
         StartCoroutine(Hurt());
     }
 
@@ -114,6 +107,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     {
 
         yield return new WaitForSeconds(1);
-        walkingAnimationA.Play();
+        anim.SetBool("isHurting", false) ;
+        anim.SetBool("isWalking", true);
     }
 }
