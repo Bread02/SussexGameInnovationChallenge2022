@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class VentDoor : MonoBehaviour, IInteractable
+public class HomeBaseSceneManager : MonoBehaviour, IInteractable
 {
-
-    public GameObject interactableObject;
-
-
-
     // Start is called before the first frame update
     void Start()
     {
-        interactableObject = this.gameObject;
+        
     }
 
     // Update is called once per frame
@@ -24,7 +20,7 @@ public class VentDoor : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        SceneManager.LoadScene("SkillTreeWeapons");
-        Debug.Log("Loading skill tree weapons");
+        SceneManager.LoadScene("BiomeOne");
+        Debug.Log("Loading Biome One");
     }
 }
