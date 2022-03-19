@@ -30,3 +30,29 @@ If a player dies in a biome, they must restart that biome. They will only comple
 
 The objective of each run is to travel as further as possible to acquire material and survive to bring them home safely. More remote biomes are very hostile and dangerous but will also host valuable resources necessary to restore your home settlements.
 
+## Weapons and Skills ## 
+Pick your favourite weapon!
+
+<img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/icon/beebasic.png" alt="drawing" width="100"/> <img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/icon/platypusbasic.png" alt="drawing" width="100"/> <img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/icon/quackbasic.png" alt="drawing" width="100"/> <img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/icon/rockbasic.png" alt="drawing" width="100"/>
+
+And enhance it with your favourite perks ~
+
+<img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/assets_other/Skill_Tree_Screenshot.PNG" alt="drawing" width="800"/>
+
+## Explore Biomes ##
+Each Biome will host unique enemies and materials:
+#### Haunted Forest ####
+guarded by the Stag
+
+<img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/biome%20A.png" alt="drawing" width="400"/>
+
+#### Oily Ocean ####
+home to the Bloated Angler Fish
+
+<img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/biome%20B.png" alt="drawing" width="400"/>
+
+#### Nightmare ####
+????
+
+<img src="https://github.com/Bread02/SussexGameInnovationChallenge2022/blob/main/GameInnovationChallenge2022/Assets/CrayonSprites/biome%20C.png" alt="drawing" width="400"/>
+
