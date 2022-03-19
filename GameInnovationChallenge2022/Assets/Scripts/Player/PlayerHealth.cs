@@ -10,18 +10,28 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     // player health foreground which is found in the HUD Canvas
     [SerializeField] private Image playerHealthFG;
     [SerializeField] private GameObject DeathCanvas;
-    [SerializeField] public PlayerActionControls playerActionControls;
+     public PlayerActionControls playerActionControls;
     [SerializeField] private GameObject DeathCanvasMenu;
 
-    //player sprites
-    [SerializeField] private Sprite playerDamageSprite;
-    [SerializeField] private Sprite playerNormalSprite;
+
+    //animations
+    [SerializeField] private AnimationClip hurtAnimation;
+    [SerializeField] private AnimationClip walkingAnimation;
+
+    private Animation hurtAnimationA;
+    private Animation walkingAnimationA;
 
     private bool healthLoss;
 
 
     private void Awake()
     {
+        hurtAnimationA = GetComponent<Animation>();
+        hurtAnimationA.clip = hurtAnimation;
+
+        walkingAnimationA = GetComponent<Animation>();
+        walkingAnimationA.clip = walkingAnimation;
+
         // this connects the new input system to the health loss button, O.
         playerActionControls = new PlayerActionControls();
         playerActionControls.DebugControls.HealthLoss.performed += ctx => healthLoss = true;
@@ -63,17 +73,24 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
     void HealthLoss()
     {
         playerHealth -= 5;
+        hurtAnimationA.Play();
+
+        StartCoroutine(Hurt());
     }
 
     public void MissileDamage()
     {
         playerHealth -= 30;
+        hurtAnimationA.Play();
+        StartCoroutine(Hurt());
     }
 
     public void GarbageProjectileDamage()
     {
         playerHealth -= 20;
         Debug.Log("Enemy taken damage by enemy projectile");
+        hurtAnimationA.Play();
+        StartCoroutine(Hurt());
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -91,5 +108,12 @@ public class PlayerHealth : MonoBehaviour, IPlayerDamage
         Debug.Log("Player has died");
         DeathCanvas.SetActive(true);
         DeathCanvasMenu.SetActive(true);
+    }
+
+    public IEnumerator Hurt()
+    {
+
+        yield return new WaitForSeconds(1);
+        walkingAnimationA.Play();
     }
 }

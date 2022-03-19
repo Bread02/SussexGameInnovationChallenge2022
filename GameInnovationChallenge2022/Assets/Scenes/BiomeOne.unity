@@ -658,6 +658,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439992401}
   m_CullTransparentMesh: 1
+--- !u!1 &658884543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658884545}
+  - component: {fileID: 658884544}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!111 &658884544
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658884543}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0f4810ed12788144c88913fc77bab70f, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!4 &658884545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658884543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9589805, y: 0.37421757, z: -4.470676}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891670274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1054,7 @@ MonoBehaviour:
   beeAttackPoisonSting: 0
   beeAttackQueenBee: 0
   petRockSelected: 0
-  platypusBeamSelected: 0
+  platypusBeamSelected: 1
   quackAttackSelected: 0
   beesSelected: 0
 --- !u!4 &1007318585
@@ -1811,9 +1858,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6453632392123790316, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453632392123790316, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
       propertyPath: DeathCanvas
       value: 
       objectReference: {fileID: 1398047021}
+    - target: {fileID: 6453632392123790316, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: hurtAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 0f4810ed12788144c88913fc77bab70f, type: 2}
     - target: {fileID: 6453632392123790316, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
       propertyPath: playerHealthFG
       value: 
@@ -1822,6 +1877,18 @@ PrefabInstance:
       propertyPath: DeathCanvasMenu
       value: 
       objectReference: {fileID: 1461450729}
+    - target: {fileID: 6453632392123790316, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: walkingAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 4dca03c7a5d3cfe46ab326fd0c564361, type: 2}
+    - target: {fileID: 6453632392123790317, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453632392123790317, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.86
+      objectReference: {fileID: 0}
     - target: {fileID: 6453632392123790320, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1870,9 +1937,21 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6453632392123790321, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4287836069267579821, guid: 2948ee6cfba52ae419523600c16ecb8f, type: 3}
     - target: {fileID: 6453632392123790323, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677109907180675537, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677109907180675537, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 7677109907180675541, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
       propertyPath: gameDataManager
@@ -1893,12 +1972,33 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7677109907180675541, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
   m_PrefabInstance: {fileID: 1328782299}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1346319816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 871c03f746e83ff40adfcb94572c355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1346319816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6453632392123790323, guid: 39c1605b87ca474408d1be8897509ee6, type: 3}
+  m_PrefabInstance: {fileID: 1328782299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1346319817
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346319816}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4dca03c7a5d3cfe46ab326fd0c564361, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0f4810ed12788144c88913fc77bab70f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1368144456
 GameObject:
   m_ObjectHideFlags: 0
