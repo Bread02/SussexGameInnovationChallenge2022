@@ -16,6 +16,7 @@ public class EnemyFollowAI : MonoBehaviour
     void Start()
     {
         enemy = this.gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
