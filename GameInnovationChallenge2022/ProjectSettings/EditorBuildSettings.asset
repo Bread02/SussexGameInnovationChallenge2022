@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillTreeAbilities.unity
     guid: 519b49e90a2e3b94bacbf00c4c6c54b5
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/Accessibility.unity
+    guid: 2ac56c2b6b8a170458a24ab26b8a459a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4179f1ad52d348e478f47e88583fe840, type: 2}

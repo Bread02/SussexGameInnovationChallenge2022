@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-       //load Game Scene
+        SceneManager.LoadScene("HomeBase", LoadSceneMode.Single);
     }
 
     public void Options()
@@ -24,5 +24,15 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("exited game");
+    }
+
+    public void Accessibility()
+    {
+        SceneManager.LoadScene("Accessibility", LoadSceneMode.Single);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
